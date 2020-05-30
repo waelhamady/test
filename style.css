@@ -519,6 +519,10 @@ html {
     border-bottom: 1px solid var(--grayClr);
 }
 
+#profileMenu .w3-bar-item:last-child {
+    border: 0;
+}
+
 #profileMenuDropdown .confirmBtn {
     background-color: var(--secondClr);
     border-radius: 8px;
