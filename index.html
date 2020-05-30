@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>test</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+
+<body>
+    <header id="platformHeader" class="w3-top">
+        <div class="w3-bar" id="headerItemsContainer">
+            <a href="#" class="w3-bar-item">
+                <img src="images/logo.png" alt="model-wiz-logo" width="115">
+            </a>
+            <div></div>
+            <div></div>
+            <div id="profileMenu" class="w3-bar-item">
+                <img src="images/userAvatar.svg" alt="user-avatar" width="42" style="cursor: pointer;" onclick="showHideElement('profileMenuDropdown')">
+                <div class=" w3-bar-block w3-card" id="profileMenuDropdown" style="display: none;">
+                    <div class="w3-bar-item"><em>Some Actions</em></div>
+                    <div class="w3-bar-item" style="text-align: right;">
+                        <button class="w3-button confirmBtn" onclick="showElement('logOutMsg');hideElement('profileMenuDropdown')">
+                          <span class="material-icons" style="position: relative;top:3px;font-size:16px">login</span> Logout</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <nav class="w3-sidebar w3-animate-left" id="platformSidebar">
+        <div class="w3-bar-block manageContainer">
+            <a href="#" class="w3-bar-item active"><i class="fas fa-database"></i> Manage Data</a>
+            <a href="manage-users.html" class="w3-bar-item"><i class="fas fa-users"></i> Manage Users</a>
+        </div>
+    </nav>
+    <main id="main">
+        <span class="material-icons toggleSidebar" onclick="toggleSidebar()" id=toggleSidebar>get_app</span>
+        <div class="searchContainer">
+            <i class="material-icons">search</i>
+            <input class="searchBox" type="text" name="search" placeholder='Search for Company name ...' id="searchBox" onkeyup="myFunction()">
+            <input type="submit" value="Search" class="searchButton">
+        </div>
+        <div id="dashboardContainer">
+            <div id="dashboard" class="">
+                <!-- Dashboard Headers -->
+                <div id="headingRow" class="w3-row">
+                    <div class="w3-col l2 headingRowItem"><b>Company Name</b></div>
+                    <div class="w3-col l2 headingRowItem"><b>First Name</b></div>
+                    <div class="w3-col l2 headingRowItem"><b>Email</b></div>
+                    <div class="w3-col l2 headingRowItem"><b>Registration Date</b></div>
+                    <div class="w3-col l2 headingRowItem"><b>Status</b></div>
+                    <div class="w3-col l2 headingRowItem"></div>
+                </div>
+                <!-- Dashboard - User Data -->
+                <!-- User Data - Data Row -->
+                <div class="userRow w3-row">
+                    <div class="w3-col l2">Company 1</div>
+                    <div class="w3-col l2">Jack</div>
+                    <div class="w3-col l2">jack@example.com</div>
+                    <div class="w3-col l2">5/22/2020 8:17:04</div>
+                    <div class="w3-col l2">Queued</div>
+                    <div class="w3-col l2">
+                        <button class="w3-button actionIcon"><span class="material-icons">visibility</span></button>
+                        <button class="w3-button actionIcon"><span class="material-icons">cloud_done</span></button>
+                        <button class="w3-button actionIcon"><span class="material-icons">cloud_download</span></button>
+                        <button class="w3-button actionIcon" onclick="showElement('overlay')" title="Delete"><span class="material-icons">delete</span></button>
+                    </div>
+                </div>
+                <!-- User Data - Data Row -->
+                <div class="userRow w3-row">
+                    <div class="w3-col l2">Company 2</div>
+                    <div class="w3-col l2">Mike</div>
+                    <div class="w3-col l2">mike@example.com</div>
+                    <div class="w3-col l2">5/22/2020 8:17:04</div>
+                    <div class="w3-col l2">Complete</div>
+                    <div class="w3-col l2">
+                        <button class="w3-button actionIcon"><span class="material-icons">visibility</span></button>
+                        <button class="w3-button actionIcon"><span class="material-icons">cloud_done</span></button>
+                        <button class="w3-button actionIcon"><span class="material-icons">cloud_download</span></button>
+                        <button class="w3-button actionIcon" onclick="showElement('overlay')" title="Delete"><span class="material-icons">delete</span></button>
+                    </div>
+                </div>
+                <!-- User Data - Data Row -->
+                <div class="userRow w3-row">
+                    <div class="w3-col l2">Company 3</div>
+                    <div class="w3-col l2">Steven</div>
+                    <div class="w3-col l2">steven@example.com</div>
+                    <div class="w3-col l2">5/22/2020 8:17:04</div>
+                    <div class="w3-col l2">Incomplete</div>
+                    <div class="w3-col l2">
+                        <button class="w3-button actionIcon"><span class="material-icons">visibility</span></button>
+                        <button class="w3-button actionIcon"><span class="material-icons">cloud_done</span></button>
+                        <button class="w3-button actionIcon"><span class="material-icons">cloud_download</span></button>
+                        <button class="w3-button actionIcon" onclick="showElement('overlay')" title="Delete"><span class="material-icons">delete</span></button>
+                    </div>
+                </div>
+                <!-- User Data - Data Row -->
+                <div class="userRow w3-row">
+                    <div class="w3-col l2">Company 4</div>
+                    <div class="w3-col l2">Jack</div>
+                    <div class="w3-col l2">jack@example.com</div>
+                    <div class="w3-col l2">5/22/2020 8:17:04</div>
+                    <div class="w3-col l2">Queued</div>
+                    <div class="w3-col l2">
+                        <button class="w3-button actionIcon"><span class="material-icons">visibility</span></button>
+                        <button class="w3-button actionIcon"><span class="material-icons">cloud_done</span></button>
+                        <button class="w3-button actionIcon"><span class="material-icons">cloud_download</span></button>
+                        <button class="w3-button actionIcon" onclick="showElement('overlay')" title="Delete"><span class="material-icons">delete</span></button>
+                    </div>
+                </div>
+                <!-- User Data - Data Row -->
+                <div class="userRow w3-row">
+                    <div class="w3-col l2">Company 5</div>
+                    <div class="w3-col l2">Jack</div>
+                    <div class="w3-col l2">jack@example.com</div>
+                    <div class="w3-col l2">5/22/2020 8:17:04</div>
+                    <div class="w3-col l2">Queued</div>
+                    <div class="w3-col l2">
+                        <button class="w3-button actionIcon"><span class="material-icons">visibility</span></button>
+                        <button class="w3-button actionIcon"><span class="material-icons">cloud_done</span></button>
+                        <button class="w3-button actionIcon"><span class="material-icons">cloud_download</span></button>
+                        <button class="w3-button actionIcon" onclick="showElement('overlay')" title="Delete"><span class="material-icons">delete</span></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Pagination-->
+        <div class="w3-bar" id="pagination">
+            <a href="#" class="w3-button">&laquo;</a>
+            <a href="#" class="w3-button active">1</a>
+            <a href="#" class="w3-button">2</a>
+            <a href="#" class="w3-button">3</a>
+            <a href="#" class="w3-button">4</a>
+            <a href="#" class="w3-button">&raquo;</a>
+        </div>
+    </main>
+    <!-- Warning Msg -->
+    <div id="overlay">
+        <div id="warningMsg">
+            <div class="msgTitle">Delete User</div>
+            <div class="msgText"><span class="material-icons" style="color: rgb(221, 63, 63);position:relative;top:3px">warning</span> Are you sure you want to delete this?</div>
+            <div class="popUpsBtns">
+                <button class="w3-button actionIcon cancelBtn" onclick="hideElement('overlay')">Cancel</button>
+                <button class="w3-button actionIcon confirmBtn" onclick="hideElement('overlay')">Confirm</button>
+            </div>
+        </div>
+    </div>
+    <!-- Logout Msg -->
+    <div class="overlay" id="logOutMsg">
+        <div class="warningMsg">
+            <div class="msgTitle">Logout</div>
+            <div class="msgText">Are you sure you want to Logout?</div>
+            <div class="popUpsBtns">
+                <button class="w3-button actionIcon cancelBtn" onclick="hideElement('logOutMsg')">Cancel</button>
+                <button class="w3-button actionIcon confirmBtn" onclick="hideElement('logOutMsg')">Confirm</button>
+            </div>
+        </div>
+    </div>
+    <div id="blackBg"></div>
+    <script>
+        function showElement(elem) {
+            document.getElementById(elem).style.display = "block";
+        }
+
+        function hideElement(elem) {
+            document.getElementById(elem).style.display = "none";
+        }
+
+        function showHideElement(elem) {
+            var x = document.getElementById(elem);
+            if (x.style.display === 'none') {
+                x.style.display = 'block';
+            } else {
+                x.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+
+</html>
