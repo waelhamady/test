@@ -876,7 +876,8 @@ html {
     .manageContainer {
         margin-top: 20%;
     }
-    .warningMsg {
+    .warningMsg,
+    #warningMsg {
         min-width: 300px;
         width: 300px;
     }
