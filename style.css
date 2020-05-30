@@ -840,6 +840,13 @@ html {
     #platformSidebar {
         padding-right: 16px;
     }
+    #platformSidebar a.active {
+        background-color: #fff;
+        border-radius: 8px;
+    }
+    #platformSidebar a:not(.active):hover {
+        border-radius: 8px;
+    }
     #main {
         width: 100%;
         padding-left: 0;
@@ -848,10 +855,6 @@ html {
     .toggleSidebar {
         display: inline;
         z-index: 2;
-    }
-    #platformSidebar a.active {
-        background-color: #fff;
-        border-radius: 8px;
     }
     #dashboard {
         width: 980px;
